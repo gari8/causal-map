@@ -1,7 +1,7 @@
 import { NuxtConfig } from '@nuxt/types'
 
 const nuxtConfig: NuxtConfig = {
-  srcDir: '',
+  srcDir: './src/',
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
@@ -64,7 +64,9 @@ const nuxtConfig: NuxtConfig = {
     theme: {
       dark: false,
       themes: {
-        light: {},
+        light: {
+          sideBar: '#F6F7EB'
+        },
         dark: {}
       }
     }
