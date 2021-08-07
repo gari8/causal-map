@@ -1,40 +1,40 @@
-import { NuxtConfig } from "@nuxt/types";
+import { NuxtConfig } from '@nuxt/types'
 
 const nuxtConfig: NuxtConfig = {
-  srcDir: "",
+  srcDir: '',
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
   // Target: https://go.nuxtjs.dev/config-target
-  target: "static",
+  target: 'static',
 
   typescript: {
     typeCheck: {
       eslint: {
-        files: "./src/**/*.{ts,js,vue}",
-      },
-    },
+        files: './src/**/*.{ts,js,vue}'
+      }
+    }
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: "%s - causal-map",
-    title: "causal-map",
+    titleTemplate: '%s - causal-map',
+    title: 'causal-map',
     htmlAttrs: {
-      lang: "en",
+      lang: 'en'
     },
     meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" },
-      { name: "format-detection", content: "telephone=no" },
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: '' },
+      { name: 'format-detection', content: 'telephone=no' }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
   manifest: {
-    name: "",
-    description: "",
+    name: '',
+    description: ''
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -48,11 +48,11 @@ const nuxtConfig: NuxtConfig = {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    "@nuxtjs/eslint-module",
+    '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/typescript
-    "@nuxt/typescript-build",
+    '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
-    "@nuxtjs/vuetify",
+    '@nuxtjs/vuetify'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -60,18 +60,18 @@ const nuxtConfig: NuxtConfig = {
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: ["~/assets/variables.scss"],
+    customVariables: ['~/assets/variables.scss'],
     theme: {
       dark: false,
       themes: {
         light: {},
-        dark: {},
-      },
-    },
+        dark: {}
+      }
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
-};
+  build: {}
+}
 
-export default nuxtConfig;
+export default nuxtConfig

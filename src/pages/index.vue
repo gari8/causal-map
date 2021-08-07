@@ -15,8 +15,7 @@
             For more information on Vuetify, check out the <a
               href="https://vuetifyjs.com"
               target="_blank"
-              rel="noopener noreferrer"
-            >
+              rel="noopener noreferrer">
               documentation
             </a>.
           </p>
@@ -25,8 +24,7 @@
               href="https://chat.vuetifyjs.com/"
               target="_blank"
               rel="noopener noreferrer"
-              title="chat"
-            >
+              title="chat">
               discord
             </a>.
           </p>
@@ -35,8 +33,7 @@
               href="https://github.com/vuetifyjs/vuetify/issues"
               target="_blank"
               rel="noopener noreferrer"
-              title="contribute"
-            >
+              title="contribute">
               issue board
             </a>.
           </p>
@@ -48,16 +45,14 @@
           <a
             href="https://nuxtjs.org/"
             target="_blank"
-            rel="noopener noreferrer"
-          >
+            rel="noopener noreferrer">
             Nuxt Documentation
           </a>
           <br>
           <a
             href="https://github.com/nuxt/nuxt.js"
             target="_blank"
-            rel="noopener noreferrer"
-          >
+            rel="noopener noreferrer">
             Nuxt GitHub
           </a>
         </v-card-text>
@@ -66,8 +61,7 @@
           <v-btn
             color="primary"
             nuxt
-            to="/inspire"
-          >
+            to="/inspire">
             Continue
           </v-btn>
         </v-card-actions>

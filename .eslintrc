@@ -23,7 +23,6 @@
   "rules": {
     "comma-dangle": ["error", "never"],
     "prefer-promise-reject-errors": 0,
-    "no-vars": 2,
     "vue/script-indent": [
       "error",
       2,
