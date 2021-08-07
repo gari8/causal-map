@@ -1,0 +1,63 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+//    "parser": "babel-eslint",
+    "ecmaVersion": 2020
+  },
+  "extends": [
+    "prettier",
+    "standard",
+    "@nuxtjs/eslint-config-typescript",
+    "plugin:nuxt/recommended"
+  ],
+  "plugins": [
+    "vue"
+  ],
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "prefer-promise-reject-errors": 0,
+    "no-vars": 2,
+    "vue/script-indent": [
+      "error",
+      2,
+      {
+        "baseIndent": 1,
+        "switchCase": 1,
+        "ignores": []
+      }
+    ],
+    "vue/html-closing-bracket-newline": [
+      2,
+      {
+        "multiline": "never"
+      }
+    ],
+    "vue/html-self-closing": [
+      "error",
+      {
+        "html": {
+          "void": "never",
+          "normal": "always",
+          "component": "always"
+        },
+        "svg": "always",
+        "math": "always"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.vue", "*.ts", "*.js"],
+      "rules": {
+        "indent": "off"
+      }
+    }
+  ]
+}
