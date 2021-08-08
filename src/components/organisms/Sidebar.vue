@@ -1,5 +1,5 @@
 <template>
-  <v-container class="d-flex pa-0" fluid>
+  <v-container class="container d-flex pa-0" fluid>
     <v-navigation-drawer
       parmanent
       color="sideBar">
@@ -53,7 +53,9 @@
         </div>
       </v-list>
     </v-navigation-drawer>
-    <slot />
+    <v-container fluid>
+      <slot />
+    </v-container>
   </v-container>
 </template>
 <script lang="ts">
@@ -81,7 +83,13 @@
           },
           {
             id: 5,
-            name: 'second'
+            name: 'second',
+            children: [
+              {
+                id: 22,
+                name: 'second-child'
+              }
+            ]
           },
           {
             id: 6,
@@ -143,6 +151,9 @@
   }
 }
 .listEnd {
-  padding: 10px 0;
+  padding: 10px 0 8px 0;
+}
+.container {
+  padding: 0 !important;
 }
 </style>

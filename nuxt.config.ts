@@ -73,7 +73,19 @@ const nuxtConfig: NuxtConfig = {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {
+    babel: {
+      plugins: [
+        [
+          '@babel/plugin-proposal-private-methods',
+          {
+            loose: true
+          }
+        ],
+        ['@babel/plugin-proposal-private-property-in-object', { loose: true }]
+      ]
+    }
+  }
 }
 
 export default nuxtConfig

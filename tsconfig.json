@@ -23,6 +23,9 @@
         "./*"
       ]
     },
+    "typeRoots": [
+      "./src/types"
+    ],
     "types": [
       "@nuxt/types",
       "@types/node"
