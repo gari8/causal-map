@@ -10,22 +10,58 @@
           fab
           dark
           large
-          color="cyan">
+          color="cyan"
+          @click="modalEditOpen = !modalEditOpen">
           <v-icon dark>
             mdi-pencil
           </v-icon>
         </v-btn>
-
-        <!--        <div class="selector red">-->
-        <!--          <v-select-->
-        <!--            v-model="mapItem.mapTitle"-->
-        <!--            :items="getNodes"-->
-        <!--            persistent-hint-->
-        <!--            return-object-->
-        <!--            single-line />-->
-        <!--          <v-btn-->
-        <!--            @click="pushNode" />-->
-        <!--        </div>-->
+        <v-btn
+          class="floating2 mx-2"
+          fab
+          dark
+          large
+          color="red"
+          @click="modalCreateOpen = !modalCreateOpen">
+          <v-icon dark>
+            mdi-plus
+          </v-icon>
+        </v-btn>
+        <create-form :open="modalCreateOpen" :on-submit="pushNode" :on-close="onCloseCreate">
+          <div class="selector">
+            <v-text-field v-model="inputFormCreate.text" />
+            <v-slider
+              v-model="inputFormCreate.fx"
+              hint="Im a hint"
+              max="500"
+              min="-500" />
+            <v-slider
+              v-model="inputFormCreate.fy"
+              hint="Im a hint"
+              max="500"
+              min="-500" />
+          </div>
+        </create-form>
+        <create-form :open="modalEditOpen" :on-submit="editNode" :on-close="onCloseEdit">
+          <div class="selector">
+            <v-select
+              v-model="inputFormEdit.text"
+              :items="getNodes"
+              persistent-hint
+              return-object
+              single-line />
+            <v-slider
+              v-model="inputFormEdit.fx"
+              hint="Im a hint"
+              max="500"
+              min="-500" />
+            <v-slider
+              v-model="inputFormEdit.fy"
+              hint="Im a hint"
+              max="500"
+              min="-500" />
+          </div>
+        </create-form>
       </div>
     </sidebar>
   </v-container>
@@ -35,13 +71,17 @@
   import { INode } from 'vue-mindmap'
   import Sidebar from '~/components/organisms/Sidebar.vue'
   import MindMap from '~/components/templates/MindMap.vue'
+  import CreateForm from '~/components/organisms/CreateForm.vue'
   export default Vue.extend({
     components: {
+      CreateForm,
       Sidebar,
       MindMap
     },
     data () {
       return {
+        modalCreateOpen: false,
+        modalEditOpen: false,
         nodes: [
           {
             text: 'test1',
@@ -64,10 +104,15 @@
             }
           }
         ],
-        mapItem: {
-          mapTitle: '',
-          nodes: [],
-          connections: []
+        inputFormCreate: {
+          text: '',
+          fx: 0,
+          fy: 0
+        },
+        inputFormEdit: {
+          text: '',
+          fx: 0,
+          fy: 0
         }
       }
     },
@@ -82,8 +127,21 @@
     },
     methods: {
       pushNode () {
+        this.nodes.push(this.inputFormCreate)
         // eslint-disable-next-line no-console
-        console.log('hi')
+        console.log(this.nodes)
+      },
+      editNode () {
+        const index = this.nodes.indexOf({ text: this.inputFormEdit.text })
+        if (index > 0) {
+          this.nodes[index] = this.inputFormEdit
+        }
+      },
+      onCloseCreate () {
+        this.modalCreateOpen = false
+      },
+      onCloseEdit () {
+        this.modalEditOpen = false
       }
     }
   })
@@ -100,6 +158,11 @@
 .floating {
   position: fixed;
   bottom: 100px;
+  right: 100px;
+}
+.floating2 {
+  position: fixed;
+  bottom: 180px;
   right: 100px;
 }
 </style>

@@ -29,18 +29,6 @@
                 <v-treeview activatable hoverable color="warning" :items="items" />
               </v-expansion-panel-content>
             </v-expansion-panel>
-            <v-expansion-panel>
-              <v-expansion-panel-header color="sideBar" class="px-4">
-                <v-icon>
-                  mdi-file-multiple-outline
-                </v-icon><v-card-text class="py-1 px-2 font-weight-bold">
-                  Maps
-                </v-card-text>
-              </v-expansion-panel-header>
-              <v-expansion-panel-content class="panelContent">
-                <v-treeview activatable hoverable color="warning" class="scroll-y-transition" :items="items" />
-              </v-expansion-panel-content>
-            </v-expansion-panel>
           </v-expansion-panels>
         </div>
         <div>
